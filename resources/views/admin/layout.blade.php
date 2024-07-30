@@ -267,10 +267,12 @@
                 <!-- HEADER DESKTOP-->
                 <!-- MAIN CONTENT-->
                 <div class="main-content">
-                    @section('container')
-                    @show
-                    @section('category')
-                    @show
+                    <div class="section__content section__content--p30">
+                        <div class="container-fluid">
+                            @section('container')
+                            @show
+                        </div>
+                    </div>
                     <!-- END MAIN CONTENT-->
                 </div>
 
