@@ -20,7 +20,6 @@
             media="all">
         <!-- Main CSS-->
         <link href="{{ asset('admin_assets/css/theme.css') }}" rel="stylesheet" media="all">
-
     </head>
 
     <body class="animsition">
@@ -30,7 +29,7 @@
                 <div class="header-mobile__bar">
                     <div class="container-fluid">
                         <div class="header-mobile-inner">
-                            <a class="logo" href="index.php">
+                            <a class="logo" href="#">
                                 <img src="{{ asset('admin_assets/images/icon/logo.png') }}" alt="CoolAdmin" />
                             </a>
                             <button class="hamburger hamburger--slider" type="button">
@@ -57,7 +56,6 @@
                 </nav>
             </header>
             <!-- END HEADER MOBILE-->
-
             <!-- MENU SIDEBAR-->
             <aside class="menu-sidebar d-none d-lg-block">
                 <div class="logo">
@@ -81,7 +79,6 @@
                 </div>
             </aside>
             <!-- END MENU SIDEBAR-->
-
             <!-- PAGE CONTAINER-->
             <div class="page-container">
                 <!-- HEADER DESKTOP-->
@@ -253,7 +250,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="account-dropdown__footer">
-                                                    <a href="#">
+                                                    <a href="logout">
                                                         <i class="zmdi zmdi-power"></i>Logout</a>
                                                 </div>
                                             </div>
@@ -275,9 +272,7 @@
                     </div>
                     <!-- END MAIN CONTENT-->
                 </div>
-
             </div>
-
             <!-- Jquery JS-->
             <script src="{{ asset('admin_assets/vendor/jquery-3.2.1.min.js') }}"></script>
             <script src="{{ asset('admin_assets/vendor/bootstrap-4.1/bootstrap.min.js') }}"></script>
@@ -286,11 +281,10 @@
             <script src="{{ asset('admin_assets/vendor/animsition/animsition.min.js') }}"></script>
             <script src="{{ asset('admin_assets/vendor/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
             <script src="{{ asset('admin_assets/vendor/chartjs/Chart.bundle.min.js') }}"></script>
-
             <!-- Main JS-->
             <script src="{{ asset('admin_assets/js/main.js') }}"></script>
+            <script src="{{ asset('admin_assets/js/custome.js') }}"></script>
 
     </body>
-
 </php>
 <!-- end document-->

@@ -11,7 +11,8 @@ php artisan migrate
 php artisan make:middleware AdminAuth
 -- Category modal and migration --
 php artisan make:model Category -mcr
-
+-- spesific migration --
+php artisan migrate --path=/database/migrations/2024_07_28_184609_create_categories_table.php
 
 
 

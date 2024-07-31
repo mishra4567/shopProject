@@ -2,6 +2,7 @@
 @section('container')
     <div class="row m-t-30">
         <div class="col-md-12 ">
+            <span id="category_insert_messege" style="">{{ session('message') }}</span>
             <div class="card">
                 <div class="card-header">
                     <div class="row">

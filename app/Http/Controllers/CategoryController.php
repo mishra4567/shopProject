@@ -12,14 +12,22 @@ class CategoryController extends Controller
         // echo "Hello";
         return view('admin/category');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function manage_category()
     {
         return view('admin/manage_category');
+    }
+    public function manage_category_process(Request $request)
+    {
+        // echo "Hello";
+        // return $request->post();
+        $request->validate([
+            'category_name' => 'required',
+            'category_slug' => 'required|unique:categories',
+        ]);
+        $model = new Category();
+        $model->category_name = $request->post('category_name');
+        $model->category_slug = $request->post('category_slug');
+        $model->save();
+        return redirect('admin/category')->with('message', 'Category inserted');
     }
 }
