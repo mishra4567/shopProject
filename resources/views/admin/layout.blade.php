@@ -8,6 +8,7 @@
         <!-- Title Page-->
         <title>Dashboard</title>
         <!-- Fontfaces CSS-->
+        <link href="{{ asset('admin_assets/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
         <link href="{{ asset('admin_assets/vendor/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet"
             media="all">
         <link href="{{ asset('admin_assets/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet"
@@ -44,11 +45,11 @@
                     <div class="container-fluid">
                         <ul class="navbar-mobile__list list-unstyled">
                             <li>
-                                <a href="dashboard">
+                                <a href="{{url('admin/dashboard')}}">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             </li>
                             <li>
-                                <a href="caregory">
+                                <a href="{{url('admin/category')}}">
                                     <i class="fas fa-chart-bar"></i>caregory</a>
                             </li>
                         </ul>
@@ -64,14 +65,15 @@
                     </a>
                 </div>
                 <div class="menu-sidebar__content js-scrollbar1">
+                    {{-- <span id="category_insert_messege" style="">{{ session('message') }}</span> --}}
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
                             <li>
-                                <a href="dashboard">
+                                <a href="{{url('admin/dashboard')}}">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             </li>
                             <li>
-                                <a href="category">
+                                <a href="{{url('admin/category')}}">
                                     <i class="fas fa-chart-bar"></i>Category</a>
                             </li>
                         </ul>
@@ -250,7 +252,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="account-dropdown__footer">
-                                                    <a href="logout">
+                                                    <a href="{{url('admin/logout')}}">
                                                         <i class="zmdi zmdi-power"></i>Logout</a>
                                                 </div>
                                             </div>
@@ -266,6 +268,19 @@
                 <div class="main-content">
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row ">
+                                        <div class="col-md-2 ">
+                                            Notifications :
+                                        </div>
+                                        <div class="col-md-10">
+                                            <span id="notification_messege"
+                                                style="">{{ session('message') }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             @section('container')
                             @show
                         </div>
