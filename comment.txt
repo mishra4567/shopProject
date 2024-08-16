@@ -13,9 +13,9 @@ php artisan make:middleware AdminAuth
 php artisan make:model Category -mcr
 -- spesific migration --
 php artisan migrate --path=/database/migrations/2024_07_28_184609_create_categories_table.php
-
-
-
+16.08.2024
+Coupon Crud Add
+php artisan make:model Coupon -mcr
 
 
 

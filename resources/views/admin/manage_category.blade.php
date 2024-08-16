@@ -1,4 +1,7 @@
 @extends('admin.layout')
+{{-- 16.0.2024 || 21.58 --}}
+@section('page_title', 'Category Manage')
+{{-- 16.0.2024 || 21.58 --}}
 @section('container')
     <div class="row m-t-30">
         <div class="col-md-12">
@@ -6,7 +9,7 @@
             <div class="card">
                 <div class="card-header">Manage Category
                     &nbsp;&nbsp;&nbsp;
-                    <a href="{{url('admin/category')}}" class="alert-link text-success">Back Page</a>
+                    <a href="{{ url('admin/category') }}" class="alert-link text-success">Back Page</a>
                 </div>
                 <div class="">
                 </div>
@@ -20,7 +23,7 @@
                                 <div class="form-group">
                                     <label for="category_name" class="control-label mb-1">Categoy Name</label>
                                     <input id="category_name" name="category_name" type="text"
-                                        class="form-control cc-exp" value="{{$category_name}}" data-val="true"
+                                        class="form-control cc-exp" value="{{ $category_name }}" data-val="true"
                                         placeholder="Categoy name" autocomplete="category_name">
                                 </div>
                                 <span class="help-block">
@@ -33,7 +36,7 @@
                                 <label for="category_slug" class="control-label mb-1">Categoy slug</label>
                                 <div class="input-group">
                                     <input id="category_slug" name="category_slug" type="text"
-                                        class="form-control cc-cvc" value="{{$category_slug}}" data-val="true"
+                                        class="form-control cc-cvc" value="{{ $category_slug }}" data-val="true"
                                         placeholder="Categoy slug">
                                 </div>
                                 <span class="help-block">
@@ -50,7 +53,7 @@
                                 <span id="payment-button-sending" style="display:none;">Sending…</span>
                             </button>
                         </div>
-                        <input type="hidden" name="id" value="{{$id}}">
+                        <input type="hidden" name="id" value="{{ $id }}">
                     </form>
                 </div>
             </div>

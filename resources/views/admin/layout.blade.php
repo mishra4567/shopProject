@@ -6,13 +6,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!-- Title Page-->
-        <title>Dashboard</title>
+        {{-- 16.0.2024 || 21.58 --}}
+        <title>@yield('page_title')</title>
+        {{-- 16.0.2024 || 21.58 --}}
         <!-- Fontfaces CSS-->
-        <link href="{{ asset('admin_assets/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+        <link href="{{ asset('admin_assets/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet"
+            media="all">
         <link href="{{ asset('admin_assets/vendor/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet"
             media="all">
-        <link href="{{ asset('admin_assets/vendor/mdi-font/css/material-design-iconic-font.min.css') }}" rel="stylesheet"
-            media="all">
+        <link href="{{ asset('admin_assets/vendor/mdi-font/css/material-design-iconic-font.min.css') }}"
+            rel="stylesheet" media="all">
         <!-- Bootstrap CSS-->
         <link href="{{ asset('admin_assets/vendor/bootstrap-4.1/bootstrap.min.css') }}" rel="stylesheet" media="all">
         <!-- Vendor CSS-->
@@ -45,13 +48,19 @@
                     <div class="container-fluid">
                         <ul class="navbar-mobile__list list-unstyled">
                             <li>
-                                <a href="{{url('admin/dashboard')}}">
+                                <a href="{{ url('admin/dashboard') }}">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             </li>
                             <li>
-                                <a href="{{url('admin/category')}}">
-                                    <i class="fas fa-chart-bar"></i>caregory</a>
+                                <a href="{{ url('admin/category') }}">
+                                    <i class="fas fa-chart-bar"></i>Caregory</a>
                             </li>
+                            {{-- 16.0.2024 || 21.58 --}}
+                            <li>
+                                <a href="{{ url('admin/coupon') }}">
+                                    <i class="fas fa-ticket-alt"></i>Coupon</a>
+                            </li>
+                            {{-- 16.0.2024 || 21.58 --}}
                         </ul>
                     </div>
                 </nav>
@@ -69,13 +78,19 @@
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
                             <li>
-                                <a href="{{url('admin/dashboard')}}">
+                                <a href="{{ url('admin/dashboard') }}">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             </li>
                             <li>
-                                <a href="{{url('admin/category')}}">
+                                <a href="{{ url('admin/category') }}">
                                     <i class="fas fa-chart-bar"></i>Category</a>
                             </li>
+                            {{-- 16.0.2024 || 21.58 --}}
+                            <li>
+                                <a href="{{ url('admin/coupon') }}">
+                                    <i class="fas fa-ticket-alt"></i>Coupon</a>
+                            </li>
+                            {{-- 16.0.2024 || 21.58 --}}
                         </ul>
                     </nav>
                 </div>
@@ -252,7 +267,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="account-dropdown__footer">
-                                                    <a href="{{url('admin/logout')}}">
+                                                    <a href="{{ url('admin/logout') }}">
                                                         <i class="zmdi zmdi-power"></i>Logout</a>
                                                 </div>
                                             </div>
