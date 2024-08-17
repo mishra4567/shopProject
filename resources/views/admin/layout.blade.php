@@ -60,6 +60,12 @@
                                 <a href="{{ url('admin/coupon') }}">
                                     <i class="fas fa-ticket-alt"></i>Coupon</a>
                             </li>
+                            {{-- 17.8.2024 --}}
+                            <li>
+                                <a href="{{ url('admin/size') }}">
+                                    <i class="fas fa-expand-alt"></i>Size</a>
+                            </li>
+                            {{-- 17.8.2024 --}}
                             {{-- 16.0.2024 || 21.58 --}}
                         </ul>
                     </div>
@@ -88,14 +94,18 @@
                                 <a href="{{ url('admin/category') }}">
                                     <i class="fas fa-list"></i>Category</a>
                             </li>
-                            {{-- 17.8.2024 --}}
                             {{-- 16.8.2024 || 21.58 --}}
+                            {{-- 17.8.2024 --}}
                             <li class="@yield('coupon_select')">
                                 <a href="{{ url('admin/coupon') }}">
                                     <i class="fas fa-ticket-alt"></i>Coupon</a>
                             </li>
-                            {{-- 16.8.2024 || 21.58 --}}
+                            <li class="@yield('size_select')">
+                                <a href="{{ url('admin/size') }}">
+                                    <i class="fas fa-expand"></i>Size</a>
+                            </li>
                             {{-- 17.8.2024 --}}
+                            {{-- 16.8.2024 || 21.58 --}}
                         </ul>
                     </nav>
                 </div>

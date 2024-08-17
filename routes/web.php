@@ -5,6 +5,9 @@ use App\Http\Controllers\CategoryController;
 // {{-- 16.0.2024 || 21.58 --}}
 use App\Http\Controllers\CouponController;
 // {{-- 16.0.2024 || 21.58 --}}
+// 17.8.2024  || 20.28
+use App\Http\Controllers\SizeController;
+// 17.8.2024  || 20.28
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -53,8 +56,22 @@ Route::group(['middleware' => 'admin_auth'], function () {
     // 17.8.2024  || 20.28
     Route::get('admin/coupon/status/{status}/{id}', [CouponController::class, 'status']);
     // 17.8.2024  || 20.28
-    // {{-- 16.0.2024 || 21.58 --}}
 
+    /**
+     * copy of Coupon
+     * This is for Size
+     * size
+     *
+     * // 17.8.2024  || 20.28
+     *
+     */
+    Route::get('admin/size', [SizeController::class, 'index']);
+    Route::get('admin/size/manage_size', [SizeController::class, 'manage_size']);
+    Route::post('admin/size/manage_size_process', [SizeController::class, 'manage_size_process'])->name('size.manage_size_process');
+    Route::get('admin/size/delete/{id}', [SizeController::class, 'delete']);
+    Route::get('admin/size/manage_size/{id}', [SizeController::class, 'manage_size']);
+    Route::get('admin/size/status/{status}/{id}', [SizeController::class, 'status']);
+    // 17.8.2024  || 20.28
     /**
      * This is for Admin Login And Logout
      */
