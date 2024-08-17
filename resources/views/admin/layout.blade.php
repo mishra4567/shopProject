@@ -77,20 +77,25 @@
                     {{-- <span id="category_insert_messege" style="">{{ session('message') }}</span> --}}
                     <nav class="navbar-sidebar">
                         <ul class="list-unstyled navbar__list">
-                            <li>
+                            {{-- 17.8.2024 --}}
+                            {{-- <li class="active"> --}}
+                            <li class="@yield('dashboard_select')">
                                 <a href="{{ url('admin/dashboard') }}">
                                     <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             </li>
-                            <li>
+                            {{-- 17.8.2024 --}}
+                            <li class="@yield('category_select')">
                                 <a href="{{ url('admin/category') }}">
-                                    <i class="fas fa-chart-bar"></i>Category</a>
+                                    <i class="fas fa-list"></i>Category</a>
                             </li>
-                            {{-- 16.0.2024 || 21.58 --}}
-                            <li>
+                            {{-- 17.8.2024 --}}
+                            {{-- 16.8.2024 || 21.58 --}}
+                            <li class="@yield('coupon_select')">
                                 <a href="{{ url('admin/coupon') }}">
                                     <i class="fas fa-ticket-alt"></i>Coupon</a>
                             </li>
-                            {{-- 16.0.2024 || 21.58 --}}
+                            {{-- 16.8.2024 || 21.58 --}}
+                            {{-- 17.8.2024 --}}
                         </ul>
                     </nav>
                 </div>

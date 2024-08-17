@@ -1,7 +1,10 @@
 @extends('admin.layout')
-{{-- 16.0.2024 || 21.58 --}}
+{{-- 16.8.2024 || 21.58 --}}
 @section('page_title', 'Category Manage')
-{{-- 16.0.2024 || 21.58 --}}
+{{-- 16.8.2024 || 21.58 --}}
+{{-- 17.8.2024 || 20.00 --}}
+@section('category_select', 'active')
+{{-- 17.8.2024 || 20.00 --}}
 @section('container')
     <div class="row m-t-30">
         <div class="col-md-12">

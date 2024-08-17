@@ -68,4 +68,17 @@ class CouponController extends Controller
         $model->delete();
         return redirect('admin/coupon')->with('message', 'Coupon Deleted');
     }
+    /**
+     * 17.8.2024 || 20.14
+     * coped from delete function
+     * This is for status update
+     */
+    public function status(Request $request, $status, $id)
+    {
+        $model = Coupon::find($id);
+        $model->status = $status;
+        $model->save();
+        return redirect('admin/coupon')->with('message', 'Coupon Status Updated');
+    }
+    // 17.8.2024 || 20.14
 }

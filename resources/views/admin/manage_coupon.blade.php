@@ -2,6 +2,9 @@
 {{-- coped from manage_category  --}}
 @extends('admin.layout')
 @section('page_title', 'Coupon Manage')
+{{-- 17.8.2024 || 20.00 --}}
+@section('coupon_select', 'active')
+{{-- 17.8.2024 || 20.00 --}}
 @section('container')
     <div class="row m-t-30">
         <div class="col-md-12">
