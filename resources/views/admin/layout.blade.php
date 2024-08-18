@@ -24,6 +24,8 @@
             media="all">
         <!-- Main CSS-->
         <link href="{{ asset('admin_assets/css/theme.css') }}" rel="stylesheet" media="all">
+        {{-- Custom css --}}
+        <link href="{{ asset('admin_assets/css/custom.css') }}" rel="stylesheet" media="all">
     </head>
 
     <body class="animsition">
@@ -304,7 +306,8 @@
                 <div class="main-content">
                     <div class="section__content section__content--p30">
                         <div class="container-fluid">
-                            <div class="card">
+                            {{-- 18.08.2024  || 23.40 --}}
+                            {{-- <div class="card">
                                 <div class="card-header">
                                     <div class="row ">
                                         <div class="col-md-2 ">
@@ -316,7 +319,30 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
+                            @if (session('message'))
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="row ">
+                                            <div class="col-md-2 ">
+                                                Notifications :
+                                            </div>
+                                            <div class="col-md-10" id="messege">
+                                                <div id="notification_messeges"
+                                                    class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+                                                    <span class="badge badge-pill badge-success">Success</span>
+                                                    <span id="notification_content">{{ session('message') }}</span>
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            {{-- 18.08.2024  || 23.40 --}}
                             @section('container')
                             @show
                         </div>
