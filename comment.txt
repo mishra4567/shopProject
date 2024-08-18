@@ -21,6 +21,11 @@ Part 6:- Active -Deactive
 Part 7:- Size Master
 php artisan make:model Size -mcr
 php artisan migrate --path=/database/migrations/2024_08_17_152826_create_sizes_table.php
+18.08.2024  ||  21.00
+Part 8:- Color Master
+php artisan make:model Color -mcr
+php artisan migrate --path=/database/migrations/2024_08_18_152754_create_colors_table.php
+
 
 
 

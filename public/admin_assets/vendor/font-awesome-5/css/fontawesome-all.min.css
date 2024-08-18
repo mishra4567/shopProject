@@ -2890,6 +2890,12 @@
     content: "\f45c"
 }
 
+/* 18.08.2024 */
+.fa-paintbrush:before {
+    content: "\f1fc";
+}
+
+/* 18.08.2024 */
 .fa-stack-exchange:before {
     content: "\f18d"
 }

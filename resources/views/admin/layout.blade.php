@@ -106,6 +106,12 @@
                             </li>
                             {{-- 17.8.2024 --}}
                             {{-- 16.8.2024 || 21.58 --}}
+                            {{-- 18.08.2024  ||  21.00 --}}
+                            <li class="@yield('color_select')">
+                                <a href="{{ url('admin/color') }}">
+                                    <i class="fas fa-paintbrush"></i>color</a>
+                            </li>
+                            {{-- 18.08.2024  ||  21.00 --}}
                         </ul>
                     </nav>
                 </div>
