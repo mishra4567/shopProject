@@ -11,6 +11,9 @@ use App\Http\Controllers\SizeController;
 // 18.8.2024  || 20.28
 use App\Http\Controllers\ColorController;
 // 18.8.2024  || 20.28
+// 18.8.2024  || 20.28
+use App\Http\Controllers\ProductController;
+// 18.8.2024  || 20.28
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -93,6 +96,21 @@ Route::group(['middleware' => 'admin_auth'], function () {
     Route::get('admin/color/manage_color/{id}', [ColorController::class, 'manage_color']);
     Route::get('admin/color/status/{status}/{id}', [ColorController::class, 'status']);
     // 18.8.2024  || 20.28
+    /**
+     * copy of Color
+     *
+     * This is for product
+     * Product
+     *
+     * 19.8.2024  || 20.28
+     */
+    Route::get('admin/product', [ProductController::class, 'index']);
+    Route::get('admin/product/manage_product', [ProductController::class, 'manage_product']);
+    Route::post('admin/product/manage_product_process', [ProductController::class, 'manage_product_process'])->name('product.manage_product_process');
+    Route::get('admin/product/delete/{id}', [ProductController::class, 'delete']);
+    Route::get('admin/product/manage_product/{id}', [ProductController::class, 'manage_product']);
+    Route::get('admin/product/status/{status}/{id}', [ProductController::class, 'status']);
+    // 19.8.2024  || 20.28
 
     /**
      * This is for Admin Login And Logout

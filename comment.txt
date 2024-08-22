@@ -25,6 +25,12 @@ php artisan migrate --path=/database/migrations/2024_08_17_152826_create_sizes_t
 Part 8:- Color Master
 php artisan make:model Color -mcr
 php artisan migrate --path=/database/migrations/2024_08_18_152754_create_colors_table.php
+18.08.2024  ||  22.40
+Part 9:- Product Section
+php artisan make:model Product -mcr
+php artisan migrate --path=/database/migrations/2024_08_18_181715_create_products_table.php
+22.08.2024  ||  23.42
+Product add   ||  Image add   || Select Category Drop Down  || Add helper  || Add Autoloader
 
 
 

@@ -10,9 +10,10 @@
         <title>@yield('page_title')</title>
         {{-- 16.0.2024 || 21.58 --}}
         <!-- Fontfaces CSS-->
-        <link href="{{ asset('admin_assets/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet"
-            media="all">
+        <link href="{{ asset('admin_assets/css/font-face.css') }}" rel="stylesheet" media="all">
         <link href="{{ asset('admin_assets/vendor/font-awesome-5/css/fontawesome-all.min.css') }}" rel="stylesheet"
+            media="all">
+        <link href="{{ asset('admin_assets/vendor/font-awesome-4.7/css/font-awesome.min.css') }}" rel="stylesheet"
             media="all">
         <link href="{{ asset('admin_assets/vendor/mdi-font/css/material-design-iconic-font.min.css') }}"
             rel="stylesheet" media="all">
@@ -69,6 +70,18 @@
                             </li>
                             {{-- 17.8.2024 --}}
                             {{-- 16.0.2024 || 21.58 --}}
+                            {{-- 18.08.2024  ||  21.00 --}}
+                            <li">
+                                <a href="{{ url('admin/color') }}">
+                                    <i class="fas fa-paintbrush"></i>color</a>
+                                </li>
+                                {{-- 18.08.2024  ||  21.00 --}}
+                                {{-- 18.08.2024  ||  22.40 --}}
+                                <li">
+                                    <a href="{{ url('admin/product') }}">
+                                        <i class="fas fa-shopping-cart"></i>Product</a>
+                                    </li>
+                                    {{-- 18.08.2024  ||  22.40 --}}
                         </ul>
                     </div>
                 </nav>
@@ -114,6 +127,12 @@
                                     <i class="fas fa-paintbrush"></i>color</a>
                             </li>
                             {{-- 18.08.2024  ||  21.00 --}}
+                            {{-- 18.08.2024  ||  22.40 --}}
+                            <li class="@yield('product_select')">
+                                <a href="{{ url('admin/product') }}">
+                                    <i class="fas fa-shopping-cart"></i>Product</a>
+                            </li>
+                            {{-- 18.08.2024  ||  22.40 --}}
                         </ul>
                     </nav>
                 </div>
