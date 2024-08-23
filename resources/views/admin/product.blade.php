@@ -30,6 +30,9 @@
                             <th>Id</th>
                             <th>Name</th>
                             <th>Slug</th>
+                            {{-- 23.08.2024  ||  22.39 --}}
+                            <th>Image</th>
+                            {{-- 23.08.2024  ||  22.39 --}}
                             <th>Category Name</th>
                             <th>Brand</th>
                             <th>Model</th>
@@ -43,6 +46,17 @@
                                 <td>{{ $list->id }}</td>
                                 <td>{{ $list->name }}</td>
                                 <td>{{ $list->slug }}</td>
+                                {{-- 23.08.2024  ||  22.39 --}}
+                                <td>
+                                    @if ($list->image != '')
+                                        <a target="_blank" href="{{ asset('storage/media/' . $list->image) }}"
+                                            style="cursor: pointer">
+                                            <img width="100px" src="{{ asset('storage/media/' . $list->image) }}"
+                                                alt="">
+                                        </a>
+                                    @endif
+                                </td>
+                                {{-- 23.08.2024  ||  22.39 --}}
                                 <td>{{ $list->category_id }}</td>
                                 <td>{{ $list->brand }}</td>
                                 <td>{{ $list->model }}</td>

@@ -69,10 +69,20 @@ class ProductController extends Controller
     {
         // echo "Hello";
         // return $request->post();
+        // {{-- 23.08.2024  ||  22.39 --}}
+        if ($request->post('id') > 0) {
+            $image_validation = "mimes:png,jpg,jpeg";
+        } else {
+            $image_validation = "required|mimes:png,jpg,jpeg";
+        }
+        // {{-- 23.08.2024  ||  22.39 --}}
         $request->validate([
             'name' => 'required',
             // {{-- 22.08.2024  ||  23.42 --}}
-            'image' => 'required|mimes:png,jpg,jpeg',
+            // 'image' => 'required|mimes:png,jpg,jpeg',
+            // {{-- 23.08.2024  ||  22.39 --}}
+            'image' => $image_validation,
+            // {{-- 23.08.2024  ||  22.39 --}}
             // {{-- 22.08.2024  ||  23.42 --}}
             'slug' => 'required|unique:products,slug,' . $request->post('id'),
             $request->post('id'),

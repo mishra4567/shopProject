@@ -2,6 +2,13 @@
 @section('page_title', 'Product Manage')
 @section('product_select', 'active')
 @section('container')
+    {{-- 23.08.2024  ||  22.39 --}}
+    @if ($id > 0)
+        {{ $image_required = '' }}
+    @else
+        {{ $image_required = 'required' }}
+    @endif
+    {{-- 23.08.2024  ||  22.39 --}}
     <div class="row m-t-30">
         <div class="col-md-12">
             <!-- DATA TABLE-->
@@ -66,7 +73,9 @@
                             <div class="col-6">
                                 <div class="form-group">
                                     <label for="image" class="control-label mb-1">Image</label>
-                                    <input id="image" name="image" type="file" class="form-control cc-exp">
+                                    <input id="image" name="image" type="file" class="form-control cc-exp"
+                                        {{-- 23.08.2024  ||  22.39 --}} {{ $image_required }}>
+                                    {{-- 23.08.2024  ||  22.39 --}}
                                 </div>
                                 <span class="help-block">
                                     @error('image')
