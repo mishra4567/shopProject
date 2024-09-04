@@ -52,7 +52,7 @@
                                         <a target="_blank" href="{{ asset('storage/media/' . $list->image) }}"
                                             style="cursor: pointer">
                                             <img width="100px" src="{{ asset('storage/media/' . $list->image) }}"
-                                                alt="">
+                                                alt="Update Image">
                                         </a>
                                     @endif
                                 </td>

@@ -11,7 +11,7 @@ class CouponController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     * {{-- 16.0.2024 || 21.58 --}}
+     * {{-- 16.08.2024 || 21.58 --}}
      *  Coped to Categorycontroller
      */
     public function index()

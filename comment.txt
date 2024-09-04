@@ -30,10 +30,21 @@ Part 9:- Product Section
 php artisan make:model Product -mcr
 php artisan migrate --path=/database/migrations/2024_08_18_181715_create_products_table.php
 22.08.2024  ||  23.42
+Part 10:-
 Product add   ||  Image add   || Select Category Drop Down  || Add helper  || Add Autoloader
 23.08.2024  ||  23.01
 few esue solve || image showing
 php artisan storage:link
+Clrar catch:-
+php artisan cache:clear
+php artisan config:cache // clear config cache
+php artisan config:clear // clear config cache
+php artisan cache:clear // clear cache
+php artisan optimize  // To reoptimize the class loader
+php artisan route:cache // clear route cache
+php artisan view:clear // clear view cache
+New Run serve
+php -S localhost:8000 -t public/
 
 
 

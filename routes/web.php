@@ -110,6 +110,10 @@ Route::group(['middleware' => 'admin_auth'], function () {
     Route::get('admin/product/delete/{id}', [ProductController::class, 'delete']);
     Route::get('admin/product/manage_product/{id}', [ProductController::class, 'manage_product']);
     Route::get('admin/product/status/{status}/{id}', [ProductController::class, 'status']);
+    // 02.09.2024  ||  00.10
+    // product_attr_delete
+    Route::get('admin/product/product_attr_delete/{paid}/{pid}', [ProductController::class, 'product_attr_delete']);
+    // 02.09.2024  ||  00.10
     // 19.8.2024  || 20.28
 
     /**

@@ -40,6 +40,10 @@ class ProductController extends Controller
             $result['warranty'] = $arr['0']->warranty;
             $result['status'] = $arr['0']->status;
             $result['id'] = $arr['0']->id;
+            // 25.08.2024  ||  12.00
+            $result['productAttrArr'] = DB::table('product_attr')->where(['product_id' => $id])->get();
+            // myDataPrint($result['productAttrArr']);
+            // 25.08.2024  ||  12.00
         } else {
             $result['slug'] = '';
             $result['name'] = '';
@@ -54,6 +58,21 @@ class ProductController extends Controller
             $result['warranty'] = '';
             $result['status'] = '';
             $result['id'] = 0;
+            // 25.08.2024  ||  12.00
+            //02.09.2024  ||  01.00
+            $result['productAttrArr'][0]['id'] = '';
+            //02.09.2024  ||  01.00
+            $result['productAttrArr'][0]['product_id'] = '';
+            $result['productAttrArr'][0]['sku'] = '';
+            $result['productAttrArr'][0]['mrp'] = '';
+            $result['productAttrArr'][0]['qty'] = '';
+            $result['productAttrArr'][0]['price'] = '';
+            $result['productAttrArr'][0]['size_id'] = '';
+            $result['productAttrArr'][0]['color_id'] = '';
+            $result['productAttrArr'][0]['attr_image'] = '';
+            // myDataPrint($result['productAttrArr']);
+            // 25.08.2024  ||  12.00
+
         }
         // {{-- 22.08.2024  ||  23.42 --}}
         // category in a array
@@ -62,6 +81,10 @@ class ProductController extends Controller
         // print_r($result['category']);
         // die();
         // {{-- 22.08.2024  ||  23.42 --}}
+        // {{-- 24.08.2024  ||  12.00 --}}
+        $result['size'] = DB::table('sizes')->where(['status' => 1])->get();
+        $result['color'] = DB::table('colors')->where(['status' => 1])->get();
+        // {{-- 24.08.2024  ||  12.00 --}}
 
         return view('admin/manage_product', $result);
     }
@@ -87,6 +110,29 @@ class ProductController extends Controller
             'slug' => 'required|unique:products,slug,' . $request->post('id'),
             $request->post('id'),
         ]);
+        /**
+         * 02.09.2024  ||  1.20
+         * SKU Validetion Start
+         */
+        $paidArr = $request->post('paid');
+        $skuArr = $request->post('sku');
+        $mrpArr = $request->post('mrp');
+        $qtyArr = $request->post('qty');
+        $priceArr = $request->post('price');
+        $size_idArr = $request->post('size_id');
+        $color_idArr = $request->post('color_id');
+        // myDataPrint($request->post());
+        foreach ($skuArr as $key => $val) {
+            $check = DB::table('product_attr')->where('sku', '=', $skuArr[$key])->where('id', '!=', $paidArr[$key])->get();
+            if (isset($check[0])) {
+                $message = $skuArr[$key] . ' SKU already used. Please use a different SKU.';
+                return redirect()->back()->with('sku', $message);
+            }
+        }
+        /**
+         * 02.09.2024  ||  1.20
+         * SKU Validetion End
+         */
         if ($request->post('id') > 0) {
             $model = Product::find($request->post('id'));
             $msg = "Product updated";
@@ -118,6 +164,37 @@ class ProductController extends Controller
         $model->warranty = $request->post('warranty');
         $model->status = 1;
         $model->save();
+        // 24.08.2024  ||  12.00
+        /** Product Attr Start */
+        // 25.08.2024  ||  12.00
+        $pid = $model->id;
+        // 25.08.2024  ||  12.00
+        // myDataPrint($request->post());
+        foreach ($skuArr as $key => $val) {
+            $productAttrArr['product_id'] = $pid;
+            $productAttrArr['sku'] = $skuArr[$key];
+            $productAttrArr['attr_image'] = 'test';
+            $productAttrArr['price'] = $priceArr[$key];
+            $productAttrArr['mrp'] = $mrpArr[$key];
+            $productAttrArr['qty'] = $qtyArr[$key];
+            if ($size_idArr[$key] == '') {
+                $productAttrArr['size_id'] = 0;
+            } else {
+                $productAttrArr['size_id'] = $size_idArr[$key];
+            }
+            if ($color_idArr[$key] == '') {
+                $productAttrArr['color_id'] = 0;
+            } else {
+                $productAttrArr['color_id'] = $color_idArr[$key];
+            }
+            if ($paidArr[$key] != '') {
+                DB::table('product_attr')->where(['id' => $paidArr[$key]])->update($productAttrArr);
+            } else {
+                DB::table('product_attr')->insert($productAttrArr);
+            }
+        }
+        /** Product Attr End */
+        // 24.08.2024  ||  12.00
         return redirect('admin/product')->with('message', $msg);
     }
 
@@ -127,6 +204,18 @@ class ProductController extends Controller
         $model->delete();
         return redirect('admin/product')->with('message', 'Product Deleted');
     }
+    /**
+     * 02.09.2024  ||  00.10
+     * product_attr_delete
+     */
+    public function product_attr_delete(Request $request, $paid, $pid)
+    {
+        DB::table('product_attr')->where(['id' => $paid])->delete();
+        return redirect('admin/product/manage_product/' . $pid)->with('message', 'Product Attribute Deleted');
+    }
+    /**
+     * 02.09.2024  ||  00.10
+     */
     /**
      * coped from delete function
      * This is for status update
